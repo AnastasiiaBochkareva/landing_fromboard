@@ -8,10 +8,9 @@ body {
     overflow-x: hidden;
     background-color: rgb(229, 231, 235);
     font-family: "Roboto", serif;
-    font-weight: 400;
+
     font-style: normal;
-    font-size: 20px;
-    line-height: 28px;
+
     color: rgb(17, 24, 39);
 }
 * {
@@ -47,6 +46,21 @@ body button {
     margin-left: auto;
     margin-right: auto;
     padding: 0 10px;
+}
+.title {
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 40px;
+}
+.title-sm {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+}
+.subtitle {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
 }
 @media (max-width: 1600px) {
     .container {
@@ -141,9 +155,6 @@ body button {
     line-height: 32px;
 }
 .header .header__contact a {
-    font-weight: 900;
-    font-size: 36px;
-    line-height: 40px;
 }
 .header .header__delivery,
 .menu .header__delivery {
@@ -215,9 +226,41 @@ body button {
 .close-menu {
     display: none;
 }
+/* banner */
+.banner {
+    padding: 72px 0 36px;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+.banner .banner__img {
+    max-width: 756px;
+    width: 100%;
+    max-height: 352px;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 16px;
+}
+.banner .banner__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    column-gap: 16px;
+}
+.banner .banner__content .subtitle {
+    margin-bottom: 16px;
+}
+.banner .banner__col {
+    width: calc(50% - 12px);
+}
+.banner .calculator {
+    background-color: rgb(249, 250, 251);
+    border-radius: 16px;
+    padding: 24px 130px;
+}
 /* media */
 @media (max-width: 1600px) {
-    .header .header__contact a {
+    .title {
         font-weight: 900;
         font-size: 30px;
         line-height: 36px;
@@ -291,7 +334,7 @@ body button {
     .header .header__contact p {
         display: none;
     }
-    .header .header__contact a {
+    .title {
         font-size: 20px;
         line-height: 28px;
     }
