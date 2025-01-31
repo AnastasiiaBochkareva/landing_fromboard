@@ -1,0 +1,58 @@
+.profit {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    &-card {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 100%;
+        max-width: calc(33% - 12px);
+        opacity: 0;
+        transform: translateX(0);
+        transition: all 0.6s ease;
+
+        .title-sm {
+            font-size: 24px;
+            line-height: 32px;
+        }
+        .subtitle {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+        }
+        .move-left {
+            transform: translateX(-100%);
+        }
+        .move-right {
+            transform: translateX(100%);
+        }
+        .show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        &__col:last-child {
+            width: calc(100% - 148px);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        &__col {
+            img {
+                width: 136px;
+                height: 136px;
+            }
+        }
+    }
+    @media (max-width: 1600px) {
+        &-card {
+            max-width: calc(50% - 12px);
+        }
+    }
+    @media (max-width: 768px) {
+        &-card {
+            max-width: 100%;
+        }
+    }
+}

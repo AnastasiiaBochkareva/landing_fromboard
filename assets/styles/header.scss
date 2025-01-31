@@ -1,0 +1,183 @@
+.header {
+    padding: 24px 0;
+    .container {
+        display: grid;
+        grid-template-columns: 1fr max-content max-content;
+        row-gap: 24px;
+        column-gap: 12px;
+    }
+    &__img {
+        max-width: 305px;
+        width: 100%;
+        max-height: 74px;
+        height: 100%;
+        overflow: hidden;
+    }
+    &__details {
+        margin-left: auto;
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 24px;
+        row-gap: 12px;
+    }
+    &__contact {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        flex-direction: column;
+        gap: 4px;
+        p {
+            font-weight: 300;
+            font-size: 24px;
+            line-height: 32px;
+        }
+    }
+    &__delivery {
+        position: relative;
+        padding-right: 12px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    &__delivery::after {
+        content: "";
+        width: 1px;
+        height: 100%;
+        right: 0;
+        top: 0;
+        background-color: rgb(167, 139, 250);
+        display: block;
+        position: absolute;
+    }
+    &__delivery p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    &__btn {
+        margin-left: auto;
+        max-width: 196px;
+    }
+    &__nav {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 100%;
+        column-gap: 24px;
+        row-gap: 10px;
+        a {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+    .calc-link {
+        color: rgb(139, 92, 246);
+        /* text-decoration: underline;
+    text-decoration-style: dashed; */
+        position: relative;
+        &:after {
+            content: "";
+            height: 1px;
+            width: 100%;
+            position: absolute;
+            bottom: -3px;
+            display: block;
+            border-bottom: 2px dashed rgb(139, 92, 246);
+        }
+    }
+    @media (max-width: 1600px) {
+        &__contact {
+            p {
+                font-size: 20px;
+                line-height: 28px;
+            }
+        }
+    }
+    @media (max-width: 1100px) {
+        .container {
+            flex-direction: column;
+            grid-template-columns: 1fr 1fr;
+            row-gap: 12px;
+        }
+        &__delivery {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 3;
+            flex-direction: row;
+            gap: 8px;
+            align-items: center;
+            justify-content: space-around;
+            &::after {
+                content: none;
+            }
+            .header__currency {
+                white-space: nowrap;
+            }
+            p {
+                text-align: center;
+                font-size: 14px;
+                line-height: 20px;
+                span {
+                    display: block;
+                }
+            }
+        }
+        .header__delivery .header__delivery .header__delivery p {
+        }
+        &__nav {
+            grid-column-end: 3;
+            border-top: 2px solid rgb(167, 139, 250);
+            border-bottom: 2px solid rgb(167, 139, 250);
+            padding: 12px 0;
+        }
+        @media (max-width: 768px) {
+            padding: 8px 0;
+
+            &__nav {
+                display: none;
+            }
+            &__delivery {
+                display: none;
+            }
+            &__contact {
+                justify-content: flex-end;
+                align-items: center;
+                flex-direction: row;
+                column-gap: 16px;
+                row-gap: 5px;
+                p {
+                    display: none;
+                }
+            }
+            [data-open-menu] {
+                display: block;
+            }
+            &__img {
+                max-width: 243px;
+                max-height: 74px;
+            }
+            .profit-card {
+                max-width: 100%;
+            }
+        }
+    }
+    @media (max-width: 560px) {
+        .container {
+            flex-direction: column;
+            grid-template-columns: max-content 1fr;
+        }
+        &__img {
+            max-width: 180px;
+            max-height: 44px;
+        }
+        &__contact {
+            a {
+                display: none;
+            }
+        }
+    }
+}

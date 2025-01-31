@@ -1,0 +1,72 @@
+.banner {
+    padding: 72px 10px 36px;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    &__img {
+        max-width: 756px;
+        width: 100%;
+        max-height: 352px;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 16px;
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        row-gap: 12px;
+        column-gap: 16px;
+        .subtitle {
+            margin-bottom: 16px;
+        }
+    }
+    &__col {
+        width: calc(50% - 12px);
+    }
+    .calculator {
+        background-color: rgb(249, 250, 251);
+        border-radius: 16px;
+        padding: 24px 130px;
+    }
+
+    @media (max-width: 1600px) {
+        flex-direction: column;
+        padding: 48px 10px 24px;
+        &__col {
+            width: 100%;
+        }
+        &__img {
+            max-width: 505px;
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 1;
+            grid-row-end: 3;
+        }
+        &__content {
+            display: grid;
+            grid-template-columns: 1fr 505px;
+        }
+        .subtitle {
+            grid-column-start: 1;
+            grid-column-end: 2;
+        }
+    }
+    @media (max-width: 1100px) {
+        &__img {
+            max-width: 100%;
+        }
+        &__content {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    @media (max-width: 768px) {
+        padding: 40px 10px 24px;
+        .profit-card.move-left {
+            transform: translateY(50%);
+        }
+        .profit-card.move-right {
+            transform: translateY(50%);
+        }
+    }
+}
